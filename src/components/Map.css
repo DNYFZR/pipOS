@@ -1,0 +1,18 @@
+.map-container {
+  width: 60vw;
+  height:68vh;
+  margin: 0 auto;
+  border: none;
+  border-radius: 30px;
+}
+
+.leaflet-tile {
+  filter: 
+    brightness(0.7)
+    hue-rotate(295deg) 
+    grayscale(30%)
+    sepia(10%)
+    contrast(90%)
+    drop-shadow(8px 8px 4px black) 
+    !important;
+}  

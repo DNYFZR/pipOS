@@ -1,0 +1,27 @@
+.user-table {
+  display: flex;
+  flex-direction: column;
+  max-width: 66vw;
+  max-height: 16vw;
+  overflow-y: auto;
+}
+
+.user-table::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  background-color: var(--text-color);
+}
+.user-table::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 10px;
+}
+.user-table::-webkit-scrollbar-track {
+  background-color: var(--dark-bg-color)
+}
+
+.user-data {
+  display: flex;
+  flex-direction: row;
+  margin: 1.5vw;
+  align-items: center;
+  }  
