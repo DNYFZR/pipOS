@@ -1,6 +1,6 @@
 <h1 align="center">PIP-OS</h1>
 
-<div align="center"><img src="public/vault-welcome-logo.png" width="500" /></div>
+<div align="center"><img src="public/images/vault-welcome-logo.png" width="500" /></div>
 
 <h3 align="center">RoBCo Pip-Boy 3000 Inspired OS</h3>
 
