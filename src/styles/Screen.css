@@ -1,0 +1,57 @@
+.crt-screen {
+  position: relative;
+  width: 75%;
+  height: 100%;
+  border-radius: 64px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.screen-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.screen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(16, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 30%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.crt-screen.on {
+  animation: crt-on 2s forwards;
+}
+
+.crt-screen.off {
+  animation: crt-off 2s forwards;
+}
+
+@keyframes crt-on {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes crt-off {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+}
