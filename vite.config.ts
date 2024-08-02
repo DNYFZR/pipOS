@@ -7,11 +7,4 @@ export default defineConfig({
     react(),
   ],
   base: "/pipOS/",
-  build: {
-    lib: {
-      entry: 'src/main.tsx',
-      name: 'main',
-      fileName: 'main',
-    },
-  },
 });
