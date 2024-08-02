@@ -1,0 +1,101 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --torch-color: rgb(141, 249, 17);
+  --text-color: rgb(46, 159, 11);
+  --dark-bg-color: rgb(24, 24, 24 );
+  --dark-color: rgb(32, 32, 32);
+
+  font-family:monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--text-color);
+  background-color: var(--dark-bg-color);
+  place-items: top;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-color);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 0.8;
+}
+
+h2 {
+  font-size: 2.5em;
+  line-height: 0.8;
+}
+
+h3 {
+  font-size: 2em;
+  line-height: 0.5;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+label, input, select {
+  color: var(--text-color);
+  border: none;
+  border-radius: 24px;
+  text-align: right;
+  padding-right: 0.6em;
+  width: 16vw;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+input {
+  text-align: center;
+  width: 18vw;
+  height: 2.5vw;
+  background-color: var(--text-color);
+  color: var(--dark-bg-color);
+}
+
+button {
+  border-radius: 16px;
+  border: 2px solid var(--text-color);
+  padding: 0.8em 2.4em;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--dark-bg-color);
+  background-color: var(--text-color);
+}
+
+button:focus {
+  outline: none;
+}
+
+.flash-button {
+  animation: flash 5s infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
