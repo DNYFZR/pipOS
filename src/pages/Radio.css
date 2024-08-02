@@ -1,0 +1,41 @@
+.radio-ui {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  padding: 2vw;
+}
+
+.radio-display {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  text-align: justify;
+}
+
+.radio-menu {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+}
+
+.radio-button {
+  width: 10%;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+.radio-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border: 3px solid var(--dark-bg-color);
+  margin: 8px 16vw 16px 8px;
+  background-color: var(--dark-bg-color);
+  color: var(--text-color);
+}
+
+.radio-menu-item.active {
+  background-color: var(--text-color);
+  color: var(--dark-bg-color);
+}
