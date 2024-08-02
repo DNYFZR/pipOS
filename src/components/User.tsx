@@ -1,6 +1,6 @@
 import "./User.css"
 import React from "react";
-import { User } from "../types/pipTypes";
+import { User } from "../types/User";
 
 interface UserProps {
   user:User;

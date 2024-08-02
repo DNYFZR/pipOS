@@ -3,7 +3,7 @@ import "./App.css"
 import "./styles/CRT.css"
 import "./styles/Screen.css"
 
-import { User } from "./types/pipTypes"
+import { User } from "./types/User"
 import Router, { RouterMap } from "./components/AppRouter";
 import StatsUI from "./pages/Stats";
 import InvUI from "./pages/Inventory";
