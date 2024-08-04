@@ -75,10 +75,7 @@ function App() {
       <>
         <h2>{osTitle}</h2>
         <img className="vault-icon" src="./images/vault-welcome-logo.png" />
-        <div className="welcome">
-          {commandLines.map((v, _) => <p><b>{v}</b></p>)}
-        </div>
-        
+        {commandLines.map((v, _) => <p><b>{v}</b></p>)}
         <button onClick={handleLaunch}>LAUNCH</button>
       </>
     );
@@ -103,10 +100,12 @@ function App() {
       <div className={standbyOn? "crt-screen off" : "crt-screen on"}>
         <div className="screen-content">
           <div className={torchOn? "pip-os-torch" : "pip-os"}>
-            {torchOn? <h2>{osTitle}</h2> : 
-              showWelcome ? welcomeMessage() : 
-                <Router appRoutes={appPages}/>
-            }
+            <div className="app-screen">
+              {torchOn? <h2>{osTitle}</h2> : 
+                showWelcome ? welcomeMessage() : 
+                  <Router appRoutes={appPages}/>
+              }
+            </div>
         </div>
 
         </div>
