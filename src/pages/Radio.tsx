@@ -131,7 +131,6 @@ const AudioPlayer: React.FC = () => {
 
   return (
     <>
-      <h3>VAULT-TEC AUDIO-SCANNER v4.9.61</h3>
       <button className="radio-button" onClick={handleStartStop}>{isPlaying ? "PAUSE" : "PLAY"}</button>
 
       <div className="radio-ui">

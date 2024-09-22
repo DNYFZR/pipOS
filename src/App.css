@@ -70,7 +70,7 @@
   padding-bottom: 1vw;
   max-width: 69vw;
   max-height: 78vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-color: var(--text-color);
 }
 

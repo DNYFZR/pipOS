@@ -16,7 +16,7 @@
 .radio-menu {
   display: flex;
   flex-direction: column;
-  flex: 6;
+  flex: 10;
 }
 
 .radio-button {
