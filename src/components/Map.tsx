@@ -10,7 +10,6 @@ interface Props {
 const MapComponent: React.FC<Props> = ({ center, zoom }) => {
   return (
     <>
-      <h3>VAULT-TEC GEO-SCANNER v1.0.12</h3>
       <MapContainer center={center} zoom={zoom} className="map-container">
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
       </MapContainer>

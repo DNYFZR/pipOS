@@ -72,7 +72,6 @@ const InvUI:React.FC = () => {
 
   return (
     <>
-      <h3>VAULT-TEC INVENTORY MANAGER v3.14.12</h3>
       <Router appRoutes={pageMap} subMenu={true} />
     </>
   );

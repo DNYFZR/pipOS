@@ -72,7 +72,6 @@ const StatsUI: React.FC = () => {
 
   return(
     <>
-      <h3>VAULT-TEC VITAL-O-METER v11.6.21</h3>
       <Router appRoutes={subPages} subMenu={true} />
     </>
   );
