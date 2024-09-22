@@ -43,7 +43,6 @@ function App() {
   const appPages: RouterMap = {
     "STAT": () => <StatsUI />, 
     "INV": () => <InvUI/>,
-    // "DATA": () => <LoadError />,
     "MAP": () => <MapComponent center={center} zoom={zoom} />,
     "RADIO": () => <AudioPlayer />,
   };
