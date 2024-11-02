@@ -1,11 +1,9 @@
 .inv-menu {
   display: flex;
   flex-direction: column;
-  flex: 6;
-  padding: 0% 3vw;
   overflow-y: auto;
   max-height: 50vh;
-  max-width: 62vw;
+  min-width: 50vw;
 }
 .inv-menu::-webkit-scrollbar {
   width: 10px;
@@ -25,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
-  border: 3px solid var(--dark-bg-color);
+  border: none;
   margin: 8px 16vw 16px 8px;
   background-color: var(--dark-bg-color);
   color: var(--text-color);

@@ -1,16 +1,17 @@
-import { useState } from "react"
 import "./App.css"
 import "./styles/CRT.css"
 import "./styles/Screen.css"
 
-import { User } from "./types/User"
-import Router, { RouterMap } from "./components/AppRouter";
-import StatsUI from "./pages/Stats";
-import InvUI from "./pages/Inventory";
-import AudioPlayer from "./pages/Radio";
-import MapComponent from "./components/Map";
+import { useState } from "react"
+import Router, { RouterMap } from "./components/AppRouter"
 
-export const osTitle: string = "PIP-OS(R) V7.1.0.8";
+import { User } from "./types/User"
+import StatsUI from "./pages/Stats"
+import InvUI from "./pages/Inventory"
+import AudioPlayer from "./pages/Radio"
+import MapComponent from "./components/Map"
+import SpecialData from "./pages/Special"
+import TypingEffect from "./components/Effects"
 
 export const userProfile: User = {
   name: "DANNY",
@@ -28,13 +29,13 @@ export const userProfile: User = {
 
 function App() {
   const commandLines: string[] = [
-    'COPYRIGHT 2075 ROBCO(R)',
-    'LOADER V1.1',
     'EXEC VERSION 41.10',
-    '64K RAM SYSTEM', 
-    '38911 BYTES FREE',
+    'LOADER V1.1',
     'NO HOLOTAPE FOUND',
-    'LOAD ROM(1): DEITRIX 303',
+    '64K RAM SYSTEM : 38911 BYTES FREE',
+    'LOAD ROM(1) : DEITRIX 303',
+    'COPYRIGHT 2075 ROBCO(R)',
+
   ];
 
   const center: [number, number] = [50, 3];
@@ -42,11 +43,13 @@ function App() {
 
   const appPages: RouterMap = {
     "STAT": () => <StatsUI />, 
+    "SPEC": () => <SpecialData />,
+    "PERKS": () =>  <TypingEffect tag="h4" text="AWAITING SOFTWARE PATCH..."/>,
     "INV": () => <InvUI/>,
     "MAP": () => <MapComponent center={center} zoom={zoom} />,
     "RADIO": () => <AudioPlayer />,
-  };
 
+  };
 
   const [standbyOn, setStandbyOn] = useState<boolean>(false);
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -71,12 +74,18 @@ function App() {
 
   const welcomeMessage = () => {
     return(
-      <>
-        <h2>{osTitle}</h2>
+      <div className="welcome-block">
+        <h3>PIP-OS(R) V7.1.0.8</h3>
         <img className="vault-icon" src="./images/vault-welcome-logo.png" />
-        {commandLines.map((v, _) => <p><b>{v}</b></p>)}
-        <button onClick={handleLaunch}>LAUNCH</button>
-      </>
+        
+        <div>
+          <button onClick={handleLaunch}>LAUNCH</button>
+        </div>
+  
+        <div>
+          {commandLines.map((v, _) => <p><b>{v}</b></p>)}
+        </div>
+      </div>
     );
   };
 
@@ -100,7 +109,7 @@ function App() {
         <div className="screen-content">
           <div className={torchOn? "pip-os-torch" : "pip-os"}>
             <div className="app-screen">
-              {torchOn? <h2>{osTitle}</h2> : 
+              {torchOn? <p/> : 
                 showWelcome ? welcomeMessage() : 
                   <Router appRoutes={appPages}/>
               }
