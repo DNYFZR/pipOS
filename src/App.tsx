@@ -5,7 +5,6 @@ import "./styles/Screen.css"
 import { useState } from "react"
 import Router, { RouterMap } from "./components/AppRouter"
 
-import { User } from "./types/User"
 import StatsUI from "./pages/Stats"
 import InvUI from "./pages/Inventory"
 import AudioPlayer from "./pages/Radio"
@@ -13,42 +12,14 @@ import MapComponent from "./components/Map"
 import SpecialData from "./pages/Special"
 import TypingEffect from "./components/Effects"
 
-export const userProfile: User = {
-  name: "DANNY",
-  id: "DNYFZR",
-  rank: 69,
-  designation: "CHIEF ENGINEER",
-  dob: "01/01/2188",
-  location: "COMMONWEALTH",
-  health: 80,
-  rads: 15,
-  intelligence: 95,
-  weightCarried: 325,
-  weightLimit: 350,
-};
-
 function App() {
-  const commandLines: string[] = [
-    'EXEC VERSION 41.10',
-    'LOADER V1.1',
-    'NO HOLOTAPE FOUND',
-    '64K RAM SYSTEM : 38911 BYTES FREE',
-    'LOAD ROM(1) : DEITRIX 303',
-    'COPYRIGHT 2075 ROBCO(R)',
-
-  ];
-
-  const center: [number, number] = [50, 3];
-  const zoom: number = 3.5;
-
   const appPages: RouterMap = {
     "STAT": () => <StatsUI />, 
     "SPEC": () => <SpecialData />,
     "PERKS": () =>  <TypingEffect tag="h4" text="AWAITING SOFTWARE PATCH..."/>,
     "INV": () => <InvUI/>,
-    "MAP": () => <MapComponent center={center} zoom={zoom} />,
+    "MAP": () => <MapComponent center={[50, 3]} zoom={3.5} />,
     "RADIO": () => <AudioPlayer />,
-
   };
 
   const [standbyOn, setStandbyOn] = useState<boolean>(false);
@@ -73,6 +44,16 @@ function App() {
   };
 
   const welcomeMessage = () => {
+    const commandLines: string[] = [
+      'EXEC VERSION 41.10',
+      'LOADER V1.1',
+      'NO HOLOTAPE FOUND',
+      '64K RAM SYSTEM : 38911 BYTES FREE',
+      'LOAD ROM(1) : DEITRIX 303',
+      'COPYRIGHT 2075 ROBCO(R)',
+  
+    ];
+
     return(
       <div className="welcome-block">
         <h3>PIP-OS(R) V7.1.0.8</h3>
@@ -106,6 +87,7 @@ function App() {
       </div>
         
       <div className={standbyOn? "crt-screen off" : "crt-screen on"}>
+        
         <div className="screen-content">
           <div className={torchOn? "pip-os-torch" : "pip-os"}>
             <div className="app-screen">
@@ -114,13 +96,11 @@ function App() {
                   <Router appRoutes={appPages}/>
               }
             </div>
+          </div>
         </div>
-
-        </div>
-
+      
         <div className="screen-overlay" />
       </div>
-
     </div>
   )
 }
