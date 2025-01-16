@@ -145,7 +145,7 @@ const AudioPlayer: React.FC = () => {
         </div>
         
         <div className="radio-display">
-          <canvas ref={canvasRef} width={400} height={200} />
+          <canvas ref={canvasRef} width={800} height={400} />
         </div>
 
       </div>
