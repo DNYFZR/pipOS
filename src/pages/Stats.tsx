@@ -1,6 +1,33 @@
 import "./Stats.css";
 import React from "react";
-import { userProfile } from "../App";
+
+interface User {
+  name: string;
+  id:string;
+  rank: number;
+  designation:string;
+  dob:string;
+  location: string;
+  health: number;
+  rads: number;
+  intelligence: number;
+  weightCarried: number;
+  weightLimit:number;
+}
+
+const userProfile: User = {
+  name: "DANNY",
+  id: "DNYFZR",
+  rank: 69,
+  designation: "CHIEF ENGINEER",
+  dob: "01/01/2188",
+  location: "COMMONWEALTH",
+  health: 80,
+  rads: 15,
+  intelligence: 95,
+  weightCarried: 325,
+  weightLimit: 350,
+};
 
 const StatsUI: React.FC = () => {
   const imageRoster:string[] = [

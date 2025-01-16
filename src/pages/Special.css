@@ -9,7 +9,7 @@
 .special-content {
   display: flex;
   flex-direction: column;
-  flex: 7;
+  width: 50vw;
   padding: 1vw;
   text-align: justify;
 }
@@ -19,7 +19,7 @@
   height: 50vh;
   display: flex;
   flex-direction: column;
-  flex: 3;
+  width: 20vw ;
 }
 
 .special-menu::-webkit-scrollbar {

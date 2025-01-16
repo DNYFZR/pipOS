@@ -1,8 +1,6 @@
 import "./Inventory.css";
-import "./Radio.css";
 import React, { useState } from "react";
 import Router, { RouterMap } from "../components/AppRouter";
-
 
 const InvUI:React.FC = () => {
   const weaponInv: string[] = [
@@ -50,14 +48,14 @@ const InvUI:React.FC = () => {
   const aidInv: string[] = ["RadAway", "Stimpack", "Nukka Cola", "Nukka Cola Quantum"];
 
   const getInventory = (menuItems: string[] | number[]) => {
-    const [selectedStation, setSelectedStation] = useState<string | number>(menuItems[0]);
+    const [selectedItem, setSelectedItem] = useState<string | number>(menuItems[0]);
   
     return (
       <div className="inv-menu">
         {menuItems.sort().map((v) => 
           <button 
-            className={selectedStation == v? "inv-menu-item active" : "inv-menu-item"} 
-            onClick={() => setSelectedStation(v)}
+            className={selectedItem == v? "inv-menu-item active" : "inv-menu-item"} 
+            onClick={() => setSelectedItem(v)}
           >{typeof v === "number"? v : v.toUpperCase()}</button>           
         )}
       </div>
