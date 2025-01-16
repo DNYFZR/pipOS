@@ -20,7 +20,7 @@ const Router: React.FC<RouterProps> = ({ appRoutes, subMenu }) => {
 
   return (
     <>  
-      <div className={subMenu? "sub-menu" : "tab-menu"}>
+      <div className={subMenu? "" : "tab-menu"}>
         {Object.keys(appRoutes).map((componentKey) => (
           <button
             key={componentKey}
